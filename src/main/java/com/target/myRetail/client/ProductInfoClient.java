@@ -17,7 +17,7 @@ public class ProductInfoClient {
          RestTemplate restTemplate = new RestTemplate();
          String productStr = String.valueOf(productId);
          log.info("Call external service using product id:"+productStr);
-         return restTemplate.getForObject("https://redsky.target.com/v1/pdp/tcin/{id}?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics,available_to_promise_network", ProductInfo.class, productStr);
+         return restTemplate.getForObject("https://redsky.target.com/v2/pdp/tcin/{id}?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics,available_to_promise_network", ProductInfo.class, productStr);
          
        }
 }
